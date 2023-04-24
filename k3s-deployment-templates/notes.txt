@@ -1,0 +1,11 @@
+To deploy a docker container to the kube cluster:
+
+create the lb, ing, deployment yaml files:
+    find and replace names
+    replace ports
+
+apply them to the cluster:
+    kubectl apply -f name-*.yaml
+
+check that it's running
+    kube get pods

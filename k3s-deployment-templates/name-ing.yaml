@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vmas-ing # find and replace here too
+spec:
+  rules:
+    - http:
+        paths:
+        - path: /vmas # this isn't working
+          pathType: Prefix
+          backend:
+            service: 
+              name: vmas # refs the vmas-lb.yaml service name (in metadata)
+              port:
+                number: 5005 #the port you want to access it on
