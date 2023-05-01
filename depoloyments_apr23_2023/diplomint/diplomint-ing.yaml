@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: diplomint-ing
+spec:
+  rules:
+    - host: diplomint.maximus-powers.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: diplomint-svc
+                port:
+                  number: 5020

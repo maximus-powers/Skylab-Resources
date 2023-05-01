@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: diplomint-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: diplomint
+  ports:
+  - name: http
+    port: 5020
+    targetPort: 3000

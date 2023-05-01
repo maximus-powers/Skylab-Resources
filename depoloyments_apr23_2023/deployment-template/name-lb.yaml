@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: project_name # dont forget to find and replace
+spec:
+  selector:
+    app: project_name
+  ports:
+    - protocol: TCP
+      port: 5005 # the port you want to access it on
+      targetPort: 5000 # the port that app runs on
+  type: LoadBalancer

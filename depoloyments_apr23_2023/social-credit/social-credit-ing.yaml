@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: social-credit-ing # find and replace here too
+spec:
+  rules:
+    - host: social-credit.maximus-powers.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: social-credit-svc
+                port:
+                  number: 5010

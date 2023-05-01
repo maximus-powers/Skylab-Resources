@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vmas-ing
+spec:
+  rules:
+    - host: vmas.maximus-powers.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: vmas-svc
+                port:
+                  number: 5005
